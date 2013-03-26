@@ -173,6 +173,9 @@ case $os in
 	-hiux*)
 		os=-hiuxwe2
 		;;
+	-k1*)
+		os=-rtems
+		;;
 	-sco6)
 		os=-sco5v6
 		basic_machine=`echo $1 | sed -e 's/86-.*/86-pc/'`
