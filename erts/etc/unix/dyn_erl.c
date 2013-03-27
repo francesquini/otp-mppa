@@ -207,9 +207,9 @@ find_prog(char *origpath)
         }
     }
 
-    if (!realpath(relpath, abspath)) {
+//    if (!realpath(relpath, abspath)) {
         error("Cannot determine real path to erl");
-    }
+//    }
 
     return strdup(abspath);
 }
