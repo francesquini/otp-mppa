@@ -521,13 +521,13 @@ static void pass_on(pid_t childpid)
 	ready = select(maxfd + 1, &readfds, writefds_ptr, NULL, &timeout);
 	if (ready < 0) {
 	    if (errno == EINTR) {
-		if (waitpid(childpid, &exit_status, WNOHANG) == childpid) {
+//		if (waitpid(childpid, &exit_status, WNOHANG) == childpid) {
 		    /*
 		     * The Erlang emulator has terminated. Give us some more
 		     * time to write out any pending data before we terminate too.
 		     */
-		    alarm(5);
-		}
+//		    alarm(5);
+//		}
 		FD_ZERO(&readfds);
 		FD_ZERO(&writefds);
 	    } else {
@@ -538,11 +538,11 @@ static void pass_on(pid_t childpid)
 	} else {
 	    time_t now;
 
-	    if (waitpid(childpid, &exit_status, WNOHANG) == childpid) {
-		alarm(5);
-		FD_ZERO(&readfds);
-		FD_ZERO(&writefds);
-	    }
+//	    if (waitpid(childpid, &exit_status, WNOHANG) == childpid) {
+//		alarm(5);
+//		FD_ZERO(&readfds);
+//		FD_ZERO(&writefds);
+//	    }
 
 	    /* Check how long time we've been inactive */
 	    time(&now);
