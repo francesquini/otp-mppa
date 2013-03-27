@@ -1247,8 +1247,8 @@ void reap_children(int ignored)
     int res;
     sys_sigblock(SIGCHLD);
     for (;;) {
-	while ((res = waitpid((pid_t)-1, NULL, WNOHANG)) > 0)
-	    ;
+//	while ((res = waitpid((pid_t)-1, NULL, WNOHANG)) > 0)
+//	    ;
 	if (!(res < 0 && errno == EAGAIN)) {
 	    DEBUGF(4,("reap_children: res = %d, errno = %d.",res,errno));
 	    break;
