@@ -715,7 +715,8 @@ prepare_crash_dump(void)
 	if (nice_val > 39) {
 	    nice_val = 39;
 	}
-	erts_silence_warn_unused_result(nice(nice_val));
+	erts_silence_warn_unused_result(0);
+//	erts_silence_warn_unused_result(nice(nice_val));
     }
     
     envsz = sizeof(env);
@@ -2130,9 +2131,9 @@ static int port_inp_failure(int port_num, int ready_fd, int res)
 		CHLD_STAT_UNLOCK;
 
 		/* We need not be prepared for stopped/continued processes. */
-		if (WIFSIGNALED(status))
-		    status = 128 + WTERMSIG(status);
-		else
+//		if (WIFSIGNALED(status))
+//		    status = 128 + WTERMSIG(status);
+//		else
 		    status = WEXITSTATUS(status);
 
 		driver_report_exit(driver_data[ready_fd].port_num, status);
@@ -2621,8 +2622,8 @@ static int check_children(void)
     {
 	sys_sigblock(SIGCHLD);
 	CHLD_STAT_LOCK;
-	while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
-	    note_child_death(pid, status);
+//	while ((pid = waitpid(-1, &status, WNOHANG)) > 0)
+//	    note_child_death(pid, status);
 #ifndef ERTS_SMP
 	children_died = 0;
 #endif
