@@ -13,7 +13,7 @@
  * basis, WITHOUT WARRANTY OF ANY KIND, either express or implied. See
  * the License for the specific language governing rights and limitations
  * under the License.
- *
+ * 	
  * %CopyrightEnd%
  */
 
@@ -40,6 +40,9 @@
 #define IDENTITY(c) c
 #define STRINGIFY_1(b) IDENTITY(#b)
 #define STRINGIFY(a) STRINGIFY_1(a)
+
+#include <netinet/in.h>
+#include <netinet6/in6.h>
 
 #ifdef HAVE_UNISTD_H
 #include <unistd.h>
