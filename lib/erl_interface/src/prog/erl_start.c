@@ -220,12 +220,12 @@ int erl_start_sys(ei_cnode *ec, char *alive, Erl_IpAddr adr, int flags,
       /* kill child if no response */
       kill(pid,SIGINT);
       sleep(1);
-      if (waitpid(pid,NULL,WNOHANG) != pid) {
+//      if (waitpid(pid,NULL,WNOHANG) != pid) {
 	/* no luck - try harder */
-	kill(pid,SIGKILL);
-	sleep(1);
-	waitpid(pid,NULL,WNOHANG);
-      }
+//	kill(pid,SIGKILL);
+//	sleep(1);
+//	waitpid(pid,NULL,WNOHANG);
+ //     }
     }
 
   }
