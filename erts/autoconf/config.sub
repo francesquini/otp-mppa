@@ -173,9 +173,6 @@ case $os in
 	-hiux*)
 		os=-hiuxwe2
 		;;
-	-k1*)
-		os=-rtems
-		;;
 	-sco6)
 		os=-sco5v6
 		basic_machine=`echo $1 | sed -e 's/86-.*/86-pc/'`
@@ -670,6 +667,10 @@ case $basic_machine in
 	isi68 | isi)
 		basic_machine=m68k-isi
 		os=-sysv
+		;;
+	k1*)
+		basic_machine=k1-mppa
+		os=-rtems
 		;;
 	m88k-omron*)
 		basic_machine=m88k-omron

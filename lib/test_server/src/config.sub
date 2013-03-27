@@ -668,6 +668,10 @@ case $basic_machine in
 		basic_machine=m68k-isi
 		os=-sysv
 		;;
+	k1*)
+		basic_machine=k1-mppa
+		os=-rtems
+		;;
 	m88k-omron*)
 		basic_machine=m88k-omron
 		;;
