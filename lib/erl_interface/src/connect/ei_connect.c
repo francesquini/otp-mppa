@@ -1164,7 +1164,7 @@ static unsigned int gen_challenge(void)
     uname(&s.name);
     s.cpu  = clock();
     s.pid  = getpid();
-    s.hid  = gethostid();
+    //s.hid  = gethostid();
     s.uid  = getuid();
     s.gid  = getgid();
 
