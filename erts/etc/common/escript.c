@@ -243,13 +243,13 @@ find_prog(char *origpath)
 	if ((size == 0) || (size > PMAX)) {
 	
 #else
-        if (!realpath(relpath, abspath)) {
+//        if (!realpath(relpath, abspath)) {
 #endif /* __WIN32__ */
 	    /* Cannot determine absolute path to escript. Try the origin.  */
 	    return strsave(origpath);
-	} else {
-	    return strsave(abspath);
-	}
+//	} else {
+//	    return strsave(abspath);
+//	}
     }
 }
 
